@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./icomoon/style.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/flexible.js"></script>
+    <script src="./js/echarts.min.js"></script>
+    <script src="./js/jquery.min.js"></script>
+   
+    <style>
+        @media screen and (max-width:1024px){
+            html{
+                font-size: 42.66px !important;
+            }
+        }
+        @media screen and (min-width:1920px){
+            html{
+                font-size: 80px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+   
+    <div class="viewport">
+        <div class="column">
+            <!-- 全国疫情概览模块 -->
+            <div class="panel overview">
+                <div class="inner">
+                    <h3>全国</h3>
+                    <ul class="overview-info-list">
+        
+                        <li class="overview-info-item" data-type="本土现存确诊">
+                          <p class="overview-info-item-diff">
+                            <span class="overview-info-item-diff-prefix">较昨日</span><span class="overview-info-item-diff-num up">+834</span>
+                          </p>
+                          <p class="overview-info-item-count"><span class="overview-info-item-count-num">8635</span></p>
+                          <p class="overview-info-item-name"> 本土现存确诊</p>
+                        </li>
+                      
+                        <li class="overview-info-item" data-type="现存确诊">
+                          <p class="overview-info-item-diff">
+                            <span class="overview-info-item-diff-prefix">较昨日</span><span class="overview-info-item-diff-num up">+49090</span>
+                          </p>
+                          <p class="overview-info-item-count"><span class="overview-info-item-count-num">8295443</span></p>
+                          <p class="overview-info-item-name">现存确诊</p>
+                        </li>
+                      
+                        <li class="overview-info-item" data-type="累计确诊">
+                          <p class="overview-info-item-diff">
+                            <span class="overview-info-item-diff-prefix">较昨日</span><span class="overview-info-item-diff-num up">+49866</span>
+                          </p>
+                          <p class="overview-info-item-count"><span class="overview-info-item-count-num">8685718</span></p>
+                          <p class="overview-info-item-name">累计确诊</p>
+                        </li>
+                      
+                        <li class="overview-info-item" data-type="无症状感染者">
+                          <p class="overview-info-item-diff">
+                            <span class="overview-info-item-diff-prefix">较昨日</span><span class="overview-info-item-diff-num up">+5803</span>
+                          </p>
+                          <p class="overview-info-item-count"><span class="overview-info-item-count-num">52411</span></p>
+                          <p class="overview-info-item-name">无症状感染者</p>
+                        </li>
+                      
+                    </ul>
+                </div>
+            </div>
+            <!-- 本土病例新增模块 -->
+            <div class="panel localCases">
+              <div class="inner ">
+                <div class="tabs">
+                  <a href="javascript:;" class="active">本土病例</a>
+                  <a href="javascript:;">全国疫情数据</a>
+                </div>
+                <div class="content" style="display: block;">
+                  <div class="localCases-content-head">
+                    <span class="col">地区</span>
+                    <span class="col">新增本土</span>
+                    <span class="col">新增无症状</span>
+                    <span class="col">风险地区</span>
+                  </div>
+                  <div class="localCases-marquee-view">
+                    <div class="marquee">
+                      <div class="row">
+                        <span class="col">广东</span>
+                        <span class="col">500</span>
+                        <span class="col">2507</span>
+                        <span class="col">319</span>
+                        <span class="icon-apache"></span>
+                      </div>
+                      <div class="row">
+                        <span class="col">1河南</span>
+                        <span class="col">178</span>
+                        <span class="col">1065</span>
+                        <span class="col">344</span>
+                        <span class="icon-apache"></span>
+                      </div>
+                      <div class="row">
+                        <span class="col">内蒙古</span>
+                        <span class="col">107</span>
+                        <span class="col">1019</span>
+                        <span class="col">100</span>
+                        <span class="icon-apache"></span>
+                      </div>
+                      <div class="row">
+                        <span class="col">广东</span>
+                        <span class="col">500</span>
+                        <span class="col">2507</span>
+                        <span class="col">220</span>
+                        <span class="icon-apache"></span>
+                      </div>
+                      <div class="row">
+                        <span class="col">2河南</span>
+                        <span class="col">178</span>
+                        <span class="col">1065</span>
+                        <span class="col">106</span>
+                        <span class="icon-apache"></span>
+                      </div>
+                      <div class="row">
+                        <span class="col">内蒙古</span>
+                        <span class="col">107</span>
+                        <span class="col">1019</span>
+                        <span class="col">109</span>
+                        <span class="icon-apache"></span>
+                      </div>
+                      <div class="row">
+                        <span class="col">广东</span>
+                        <span class="col">500</span>
+                        <span class="col">2507</span>
+                        <span class="col">250</span>
+                        <span class="icon-apache"></span>
+                      </div>
+                      <div class="row">
+                        <span class="col">3河南</span>
+                        <span class="col">178</span>
+                        <span class="col">1065</span>
+                        <span class="col">106</span>
+                        <span class="icon-apache"></span>
+                      </div>
+                      <div class="row">
+                        <span class="col">内蒙古</span>
+                        <span class="col">107</span>
+                        <span class="col">1019</span>
+                        <span class="col">101</span>
+                        <span class="icon-apache"></span>
+                      </div>
+                      <div class="row">
+                        <span class="col">广东</span>
+                        <span class="col">500</span>
+                        <span class="col">2507</span>
+                        <span class="col">257</span>
+                        <span class="icon-apache"></span>
+                      </div>
+                      <div class="row">
+                        <span class="col">4河南</span>
+                        <span class="col">178</span>
+                        <span class="col">1065</span>
+                        <span class="col">106</span>
+                        <span class="icon-apache"></span>
+                      </div>
+                      <div class="row">
+                        <span class="col">内蒙古</span>
+                        <span class="col">107</span>
+                        <span class="col">1019</span>
+                        <span class="col">101</span>
+                        <span class="icon-apache"></span>
+                      </div>
+                      
+                      <div class="row">
+                        <span class="col">end</span>
+                        <span class="col">500</span>
+                        <span class="col">2507</span>
+                        <span class="col">257</span>
+                        <span class="icon-apache"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="content">
+                  <div class="localCases-content-head">
+                    <span class="col">地区</span>
+                    <span class="col">新增确诊</span>
+                    <span class="col">累积确诊</span>
+                    <span class="col">治愈</span>
+                    <span class="col">死亡</span>               
+                  </div>
+                  <div class="localCases-marquee-view">
+                    <div class="marquee">
+                      <div class="row">
+                        <span class="col">1台湾</span>
+                        <span class="col">24833</span>
+                        <span class="col">7953885</span>
+                        <span class="col">13164</span>
+                        <span class="col">13313</span>
+                        <span class="icon-apache"></span>
+                      </div>
+                      <div class="row">
+                        <span class="col">香港</span>
+                        <span class="col">792</span>
+                        <span class="col">440438</span>
+                        <span class="col">93420</span>
+                        <span class="col">10492</span>
+                        <span class="icon-apache"></span>
+                      </div>
+                      <div class="row">
+                        <span class="col">广东</span>
+                        <span class="col">514</span>
+                        <span class="col">14779</span>
+                        <span class="col">3164</span>
+                        <span class="col">7</span>
+                        <span class="icon-apache"></span>
+                      </div>
+                
+                      <div class="row">
+                        <span class="col">2台湾</span>
+                        <span class="col">24833</span>
+                        <span class="col">7953885</span>
+                        <span class="col">3164</span>
+                        <span class="col">7</span>
+                        <span class="icon-apache"></span>
+                      </div>
+                      <div class="row">
+                        <span class="col">香港</span>
+                        <span class="col">792</span>
+                        <span class="col">440438</span>
+                        <span class="col">3164</span>
+                        <span class="col">7</span>
+                        <span class="icon-apache"></span>
+                      </div>
+                      <div class="row">
+                        <span class="col">广东</span>
+                        <span class="col">514</span>
+                        <span class="col">14779</span>
+                        <span class="col">3164</span>
+                        <span class="col">7</span>
+                        <span class="icon-apache"></span>
+                      </div>
+                      <div class="row">
+                        <span class="col">3台湾</span>
+                        <span class="col">24833</span>
+                        <span class="col">7953885</span>
+                        <span class="col">3164</span>
+                        <span class="col">7</span>
+                        <span class="icon-apache"></span>
+                      </div>
+                      <div class="row">
+                        <span class="col">香港</span>
+                        <span class="col">792</span>
+                        <span class="col">440438</span>
+                        <span class="col">3164</span>
+                        <span class="col">7</span>
+                        <span class="icon-apache"></span>
+                      </div>
+                      <div class="row">
+                        <span class="col">广东</span>
+                        <span class="col">514</span>
+                        <span class="col">14779</span>
+                        <span class="col">3164</span>
+                        <span class="col">7</span>
+                        <span class="icon-apache"></span>
+                      </div>
+                      <div class="row">
+                        <span class="col">4台湾</span>
+                        <span class="col">24833</span>
+                        <span class="col">7953885</span>
+                        <span class="col">13164</span>
+                        <span class="col">13313</span>
+                        <span class="icon-apache"></span>
+                      </div>
+                      <div class="row">
+                        <span class="col">香港</span>
+                        <span class="col">792</span>
+                        <span class="col">440438</span>
+                        <span class="col">93420</span>
+                        <span class="col">10492</span>
+                        <span class="icon-apache"></span>
+                      </div>
+                      <div class="row">
+                        <span class="col">广东</span>
+                        <span class="col">514</span>
+                        <span class="col">14779</span>
+                        <span class="col">3164</span>
+                        <span class="col">7</span>
+                        <span class="icon-apache"></span>
+                      </div>
+                      <div class="row">
+                        <span class="col">end</span>
+                        <span class="col">514</span>
+                        <span class="col">14779</span>
+                        <span class="col">3164</span>
+                        <span class="col">7</span>
+                        <span class="icon-apache"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+            <!-- 全国新增线形图模块 -->
+
+        </div>
+       
+        <div class="column">
+          <!-- 全国确诊地图模块 -->
+          <div class="map">
+            
+            <div class="map-tabs">
+              <a href="javascript:;" class="active">新增确诊</a>
+              <a href="javascript:;">累积确诊</a>
+            </div>
+            <div class="chart"  style="display:block;">
+              <div class="geo1"></div>
+            </div>
+            <div class="chart" >             
+              <div class="geo2" ></div>
+              
+            </div>
+            
+           
+          </div>
+          <!-- 全国新增确诊/新增无症状折线图模块 -->
+          <div class="diagram panel">
+            <div class="inner">
+              <div class="caption">
+                <h3>全国新增确诊/新增无症状</h3>
+                <a href="javascript:;" class="active" data-type="year">年</a>
+                <a href="javascript:;" data-type="quarter">季</a>
+                <a href="javascript:;" data-type="month">月</a>
+                <a href="javascript:;" data-type="week">周</a>
+              </div>
+              <div class="chart">
+                <div class="label">单位:人</div>
+                <div class="line"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+        <!-- 海外疫情概览模块 -->
+          <div class="panel overview">
+            <div class="inner">
+                <h3>海外</h3>
+                <ul class="overview-info-list">
+    
+                    <li class="overview-info-item" data-type="海外现存确诊">
+                      <p class="overview-info-item-diff">
+                        <span class="overview-info-item-diff-prefix">较昨日</span><span class="overview-info-item-diff-num up">+22万</span>
+                      </p>
+                      <p class="overview-info-item-count"><span class="overview-info-item-count-num">3660万</span></p>
+                      <p class="overview-info-item-name"> 现存确诊</p>
+                    </li>
+                  
+                    <li class="overview-info-item" data-type="现存确诊">
+                      <p class="overview-info-item-diff">
+                        <span class="overview-info-item-diff-prefix">较昨日</span><span class="overview-info-item-diff-num up">+52万</span>
+                      </p>
+                      <p class="overview-info-item-count"><span class="overview-info-item-count-num">62364万</span></p>
+                      <p class="overview-info-item-name">累积确诊</p>
+                    </li>
+                  
+                    <li class="overview-info-item" data-type="累计确诊">
+                      <p class="overview-info-item-diff">
+                        <span class="overview-info-item-diff-prefix">较昨日</span><span class="overview-info-item-diff-num up">+28万</span>
+                      </p>
+                      <p class="overview-info-item-count"><span class="overview-info-item-count-num">58044万</span></p>
+                      <p class="overview-info-item-name">累计治愈</p>
+                    </li>
+                  
+                    <li class="overview-info-item" data-type="无症状感染者">
+                      <p class="overview-info-item-diff">
+                        <span class="overview-info-item-diff-prefix">较昨日</span><span class="overview-info-item-diff-num up">+2451</span>
+                      </p>
+                      <p class="overview-info-item-count"><span class="overview-info-item-count-num">660万</span></p>
+                      <p class="overview-info-item-name">累积死亡</p>
+                    </li>
+                  
+                </ul>
+            </div>
+        </div>
+        <!-- 海外国家新增确诊TOP10模块 -->
+        <div class="foreign panel">
+          <div class="inner">
+            <h3>海外国家新增确诊Top10</h3>
+            <div class="chart">
+              <div class="bar"></div>
+            </div>
+          </div>
+        </div>
+        </div>
+    </div>
+
+
+   
+  
+  
+    <!-- 海外病历 -->
+    <script src="./js/index.js"></script>
+    <script src="./js/china.js"></script>
+    <script src="./js/myMap1.js"></script>
+    <script src="./js/myMap2.js"></script>
+</body>
+</html>
